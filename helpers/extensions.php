@@ -289,9 +289,9 @@ function FormatFraction($number) {
 	$thirdsInt = (int) $thirdsDec;
 	if ($thirdsDec == $thirdsInt) {
 		if ($thirdsInt == 1) {
-			$fractionPart = "\u2153";
+			$fractionPart = "1/3";
 		} elseif ($thirdsInt == 2) {
-			$fractionPart = "\u2154";
+			$fractionPart = "2/3";
 		}
 	} else {
 		// Otherwise assume it's in 8ths
@@ -301,19 +301,19 @@ function FormatFraction($number) {
 		$denominator = 8;
 
 		if ($numerator == 1) {
-			$fractionPart = "\u215B";
+			$fractionPart = "1/8";
 		} elseif ($numerator == 2) {
-			$fractionPart = "\u00BC";
+			$fractionPart = "1/4";
 		} elseif ($numerator == 3) {
-			$fractionPart = "\u215C";
+			$fractionPart = "3/8";
 		} elseif ($numerator == 4) {
-			$fractionPart = "\u00BD";
+			$fractionPart = "1/2";
 		} elseif ($numerator == 5) {
-			$fractionPart = "\u215D";
+			$fractionPart = "5/8";
 		} elseif ($numerator == 6) {
-			$fractionPart = "\u00BE";
+			$fractionPart = "3/4";
 		} else {
-			$fractionPart = "\u215E";
+			$fractionPart = "7/8";
 		}
 	}
 	
