@@ -526,7 +526,9 @@
 											@if(!empty($selectedRecipePosition->recipe_variable_amount))
 											{{ $selectedRecipePosition->recipe_variable_amount }}
 											@else
-											<span class="locale-number locale-number-quantity-amount">123 @if($selectedRecipePosition->recipe_amount == round($selectedRecipePosition->recipe_amount, 2)){{ round($selectedRecipePosition->recipe_amount, 2) }}@else{{ $selectedRecipePosition->recipe_amount }}@endif</span>
+											<span class="locale-number locale-number-quantity-amount">
+											{{ FormatFraction($selectedRecipePosition->recipe_amount) }}
+											</span>
 											{{ $__n($selectedRecipePosition->recipe_amount, FindObjectInArrayByPropertyValue($quantityUnits, 'id', $selectedRecipePosition->qu_id)->name, FindObjectInArrayByPropertyValue($quantityUnits, 'id', $selectedRecipePosition->qu_id)->name_plural) }}
 											@endif
 											{{ FindObjectInArrayByPropertyValue($products, 'id', $selectedRecipePosition->product_id)->name }}

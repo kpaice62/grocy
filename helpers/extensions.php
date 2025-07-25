@@ -278,3 +278,50 @@ function EmptyFolder($folderPath)
 		}
 	}
 }
+
+function FormatFraction($number) {
+	$integerPart = (int) $number;
+	$decimalPart = $number - $integerPart;
+	$fractionPart = "";
+	
+	// Check if the fraction is 3rds
+	$thirdsDec = round($decimalPart * 3, 3);
+	$thirdsInt = (int) $thirdsDec;
+	if ($thirdsDec == $thirdsInt) {
+		if ($thirdsInt == 1) {
+			$fractionPart = "\u2153";
+		} elseif ($thirdsInt == 2) {
+			$fractionPart = "\u2154";
+		}
+	} else {
+		// Otherwise assume it's in 8ths
+		
+		// Multiply the decimal part by 8 and round to the nearest integer
+		$numerator = round($decimalPart * 8);
+		$denominator = 8;
+
+		if ($numerator == 1) {
+			$fractionPart = "\u215B";
+		} elseif ($numerator == 2) {
+			$fractionPart = "\u00BC";
+		} elseif ($numerator == 3) {
+			$fractionPart = "\u215C";
+		} elseif ($numerator == 4) {
+			$fractionPart = "\u00BD";
+		} elseif ($numerator == 5) {
+			$fractionPart = "\u215D";
+		} elseif ($numerator == 6) {
+			$fractionPart = "\u00BE";
+		} else {
+			$fractionPart = "\u215E";
+		}
+	}
+	
+	if ($integerPart == 0) {
+		return "$fractionPart";
+	} elseif (strlen($fractionPart) === 0){
+		return "$integerPart"
+	} else {
+		return "$integerPart $fractionPart"
+	}
+}
