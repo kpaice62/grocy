@@ -523,8 +523,9 @@
 										@endphp
 										<span class="productcard-trigger cursor-link @if($selectedRecipePosition->due_score == 20) text-danger @elseif($selectedRecipePosition->due_score == 10) text-secondary @elseif($selectedRecipePosition->due_score == 1) text-warning @endif"
 											data-product-id="{{ $selectedRecipePosition->product_id }}">
+											{{ $selectedRecipePosition->recipe_amount }} " => "
 											@if(!empty($selectedRecipePosition->recipe_variable_amount))
-											{{ $selectedRecipePosition->recipe_variable_amount }}
+											{{ FormatFraction($selectedRecipePosition->recipe_variable_amount) }}
 											@else
 											<span class="locale-number locale-number-quantity-amount">
 											{{ FormatFraction($selectedRecipePosition->recipe_amount) }}
