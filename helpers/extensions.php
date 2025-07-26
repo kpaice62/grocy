@@ -320,8 +320,8 @@ function FormatFraction($number) {
 	if ($integerPart == 0) {
 		return "$fractionPart";
 	} elseif (strlen($fractionPart) === 0){
-		return "$integerPart"
+		return "$integerPart";
 	} else {
-		return "$integerPart $fractionPart"
+		return "$integerPart $fractionPart";
 	}
 }
