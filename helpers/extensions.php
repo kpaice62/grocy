@@ -292,7 +292,7 @@ function FormatFraction($number) {
 			$fractionPart = "1/3";
 		} elseif ($thirdsInt == 2) {
 			$fractionPart = "2/3";
-		} else {
+		} elseif ($thirdsInt == 3) {
 			$integerPart += 1;
 		}
 	} else {
@@ -316,7 +316,7 @@ function FormatFraction($number) {
 			$fractionPart = "3/4";
 		} elseif ($numerator == 7) {
 			$fractionPart = "7/8";
-		} else {
+		} elseif ($numerator == 8) {
 			$integerPart += 1;
 		}
 	}
