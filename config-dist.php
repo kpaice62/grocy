@@ -75,7 +75,7 @@ Setting('DISABLE_URL_REWRITING', false);
 // Specify an custom homepage if desired, by default the homepage will be set to the stock overview page
 // This needs to be one of the following values:
 // stock, shoppinglist, recipes, chores, tasks, batteries, equipment, calendar, mealplan
-Setting('ENTRY_PAGE', 'stock');
+Setting('ENTRY_PAGE', 'mealplan');
 
 // Set this to true if you want to disable authentication / the login screen,
 // places where user context is needed will then use the default (first existing) user
@@ -134,8 +134,8 @@ Setting('FEATURE_FLAG_SHOPPINGLIST', true);
 Setting('FEATURE_FLAG_RECIPES', true);
 Setting('FEATURE_FLAG_CHORES', true);
 Setting('FEATURE_FLAG_TASKS', true);
-Setting('FEATURE_FLAG_BATTERIES', true);
-Setting('FEATURE_FLAG_EQUIPMENT', true);
+Setting('FEATURE_FLAG_BATTERIES', false);
+Setting('FEATURE_FLAG_EQUIPMENT', false);
 Setting('FEATURE_FLAG_CALENDAR', true);
 Setting('FEATURE_FLAG_LABEL_PRINTER', false);
 
