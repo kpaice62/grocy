@@ -26,14 +26,14 @@ class SystemController extends BaseController
 	public function Root(Request $request, Response $response, array $args)
 	{
 		// Schema migration is done here
-		$databaseMigrationService = DatabaseMigrationService::getInstance();
-		$databaseMigrationService->MigrateDatabase();
+		// $databaseMigrationService = DatabaseMigrationService::getInstance();
+		// $databaseMigrationService->MigrateDatabase();
 
-		if (GROCY_MODE === 'dev' || GROCY_MODE === 'demo' || GROCY_MODE === 'prerelease')
-		{
-			$demoDataGeneratorService = DemoDataGeneratorService::getInstance();
-			$demoDataGeneratorService->PopulateDemoData(isset($request->getQueryParams()['nodemodata']));
-		}
+		// if (GROCY_MODE === 'dev' || GROCY_MODE === 'demo' || GROCY_MODE === 'prerelease')
+		// {
+		// 	$demoDataGeneratorService = DemoDataGeneratorService::getInstance();
+		// 	$demoDataGeneratorService->PopulateDemoData(isset($request->getQueryParams()['nodemodata']));
+		// }
 
 		return $response->withRedirect($this->AppContainer->get('UrlManager')->ConstructUrl($this->GetEntryPageRelative()));
 	}
